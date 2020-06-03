@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p = "http://primefaces.org/ui"
+      xmlns:b = "http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    
+    <h:head>
+        <title>Clínica - Cadastro</title>
+        <style type="text/css">
+            .form-signin{
+                margin: 0 auto;
+                max-width: 330px;
+                padding: 15px;
+            }
+        </style>
+    </h:head>
+    <h:body style="padding-top: 60px; background-color: darkcyan;">
+        <b:navBar brand="WEB Clínica" fixed="top" >
+            <b:navbarLinks>
+                <b:navLink value="Sobre nós"></b:navLink>
+                <b:navLink value="Contatos"></b:navLink>
+                <b:navLink value="Consultas"></b:navLink>
+            </b:navbarLinks>
+        </b:navBar>
+        <b:container>
+            <h:form styleClass="form-signin" prependId="false" >
+                <center>
+                    <h2 class="form-signin-heading" style="color: whitesmoke">Cadastro</h2>
+                </center>
+                
+                <b:inputText id = "Username" placeholder="Usuário" value="#{usuarioBean.user}"> 
+                    <f:facet name="prepend"> 
+                        <b:iconAwesome name="user" />
+                    </f:facet>
+                </b:inputText>
+                
+                <b:inputText id = "Email" placeholder="Email" value="#{usuarioBean.email}"> 
+                    <f:facet name="prepend"> 
+                        <b:iconAwesome name="envelope" />
+                    </f:facet>
+                </b:inputText>
+                
+                <b:inputText id = "Telefone" placeholder="Telefone" value="#{usuarioBean.phone}"> 
+                    <f:facet name="prepend"> 
+                        <b:iconAwesome name="phone" />
+                    </f:facet>
+                </b:inputText>
+                
+                <b:inputText id="password" placeholder="Senha" type="password" value="#{usuarioBean.password}"> 
+                    <f:facet name="prepend">
+                        <b:iconAwesome name="unlock-alt" />
+                    </f:facet>
+                </b:inputText> 
+                <b:selectBooleanCheckbox value="true" caption="Lembrar-me" />
+                <b:commandButton look="primary btn-block" value="Cadastrar" action="#{usuarioBean.salvarDados()}"/>
+                <h:outputText id="msg" value="#{usuarioBean.salvar}"> </h:outputText>
+            </h:form>
+        </b:container>
+    </h:body>
+</html>
+
