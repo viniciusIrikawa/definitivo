@@ -30,32 +30,31 @@
                     <h2 class="form-signin-heading" style="color: whitesmoke">Cadastro</h2>
                 </center>
                 
-                <b:inputText id = "Username" placeholder="Usuário" value="#{usuarioBean.user}"> 
+                <b:inputText id = "Username" placeholder="Usuário" value="#{cadastroBeans.cadastro.usuario}"> 
                     <f:facet name="prepend"> 
                         <b:iconAwesome name="user" />
                     </f:facet>
                 </b:inputText>
                 
-                <b:inputText id = "Email" placeholder="Email" value="#{usuarioBean.email}"> 
+                <b:inputText id = "Email" placeholder="Email" value="#{cadastroBeans.cadastro.email}"> 
                     <f:facet name="prepend"> 
                         <b:iconAwesome name="envelope" />
                     </f:facet>
                 </b:inputText>
                 
-                <b:inputText id = "Telefone" placeholder="Telefone" value="#{usuarioBean.phone}"> 
+                <b:inputText id = "Telefone" placeholder="Telefone" value="#{cadastroBeans.cadastro.telefone}"> 
                     <f:facet name="prepend"> 
                         <b:iconAwesome name="phone" />
                     </f:facet>
                 </b:inputText>
                 
-                <b:inputText id="password" placeholder="Senha" type="password" value="#{usuarioBean.password}"> 
+                <b:inputText id="password" placeholder="Senha" type="password" value="#{cadastroBeans.cadastro.senha}"> 
                     <f:facet name="prepend">
                         <b:iconAwesome name="unlock-alt" />
                     </f:facet>
                 </b:inputText> 
                 <b:selectBooleanCheckbox value="true" caption="Lembrar-me" />
-                <b:commandButton look="primary btn-block" value="Cadastrar" action="#{usuarioBean.salvarDados()}"/>
-                <h:outputText id="msg" value="#{usuarioBean.salvar}"> </h:outputText>
+                <b:commandButton look="primary btn-block" value="Cadastrar" action="#{cadastroBeans.cadastrar()}"/> 
             </h:form>
         </b:container>
     </h:body>
