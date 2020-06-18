@@ -1,4 +1,8 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package infra;
 
 import java.io.Serializable;
@@ -13,7 +17,7 @@ import javax.persistence.Id;
  * @author user
  */
 @Entity
-public class Cadastro implements Serializable {
+public class Dados implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -26,7 +30,6 @@ public class Cadastro implements Serializable {
     private String cpf;
     private String cargo;
     
-
     public Long getId() {
         return id;
     }
@@ -78,12 +81,12 @@ public class Cadastro implements Serializable {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 67 * hash + Objects.hashCode(this.id);
-        hash = 67 * hash + Objects.hashCode(this.nome);
-        hash = 67 * hash + Objects.hashCode(this.salario);
-        hash = 67 * hash + Objects.hashCode(this.rg);
-        hash = 67 * hash + Objects.hashCode(this.cpf);
-        hash = 67 * hash + Objects.hashCode(this.cargo);
+        hash = 79 * hash + Objects.hashCode(this.id);
+        hash = 79 * hash + Objects.hashCode(this.nome);
+        hash = 79 * hash + Objects.hashCode(this.salario);
+        hash = 79 * hash + Objects.hashCode(this.rg);
+        hash = 79 * hash + Objects.hashCode(this.cpf);
+        hash = 79 * hash + Objects.hashCode(this.cargo);
         return hash;
     }
 
@@ -98,7 +101,7 @@ public class Cadastro implements Serializable {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final Cadastro other = (Cadastro) obj;
+        final Dados other = (Dados) obj;
         if (!Objects.equals(this.nome, other.nome)) {
             return false;
         }
@@ -122,12 +125,10 @@ public class Cadastro implements Serializable {
 
     @Override
     public String toString() {
-        return "Cadastro{" + "id=" + id + ", nome=" + nome + ", salario=" + salario + ", rg=" + rg + ", cpf=" + cpf + ", cargo=" + cargo + '}';
+        return "Dados{" + "id=" + id + ", nome=" + nome + ", salario=" + salario + ", rg=" + rg + ", cpf=" + cpf + ", cargo=" + cargo + '}';
     }
     
     
-   
-   
     
     
     

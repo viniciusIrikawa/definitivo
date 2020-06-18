@@ -42,8 +42,8 @@
         <dependency>
             <groupId>net.bootsfaces</groupId>
             <artifactId>bootsfaces</artifactId>
-            <version>0.7.0</version>
-            <scope>compile</scope>
+            <version>1.4.2</version>
+            <!--<scope>compile</scope> -->
         </dependency>
         <dependency>
             <groupId>org.eclipse.persistence</groupId>

@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body style="padding-top: 60px; background-color: darkcyan;">
+        <b:navBar brand="WEB Clínica" fixed="top" >
+            <b:navbarLinks>
+                <b:navLink value="Tela de cadastro" href="telaTeste.xhtml"/>
+                <b:navLink value="Folha de Pagamento" href="folhaPagamento.xhtml"></b:navLink>
+            </b:navbarLinks>
+        </b:navBar>
+        
+        <style type="text/css">
+            .ui-datatable .ui-datatable-header {
+                text-align: right !important;
+            }
+            .ui-selectcheckboxmenu-panel .ui-selectcheckboxmenu-header .ui-chkbox {
+                display: none;
+            }
+        </style>
+        
+        <h:form id="form">
+            <h:panelGrid columns="9">
+                <b:inputText style="width: 70px" display="inline-block"
+                             placeholder="ID"
+                             value="#{cadastroBeans.dados.id}"/>
+                
+                <b:inputText style="width: 90px"
+                             placeholder="Nome"
+                             value="#{cadastroBeans.dados.nome}"/>
+                <b:inputText style="width: 90px"
+                             placeholder="Salario"
+                             value="#{cadastroBeans.dados.salario}"/>
+                <b:inputText style="width: 100px"
+                             placeholder="RG"
+                             value="#{cadastroBeans.dados.rg}"/>
+                <b:inputText style="width: 100px"
+                             placeholder="CPF"
+                             value="#{cadastroBeans.dados.cpf}"/>
+               <b:inputText style="width: 90px"
+                             placeholder="Cargo"
+                             value="#{cadastroBeans.dados.cargo}">
+                   <f:facet name="append">
+                       <b:commandButton look="primary btn-block" value="Salvar" action="#{cadastroBeans.cadastrar()}"/> 
+                   </f:facet>         
+                    
+               </b:inputText>
+                <br>
+                </br>
+            </h:panelGrid> 
+            
+                <b:inputText placeholder="Pesquisar">
+                    <f:facet name="append">
+                        <b:commandButton value="Buscar" action="#{cadastroBeans.buscar(nome)}"/>
+                    </f:facet>                  
+                </b:inputText>
+         
+            <p:dataTable var="dados" value="#{cadastroBeans.dado}">
+                <p:column headerText="Id">
+                    <h:outputText value="#{dados.id}" />
+                </p:column>
+
+                <p:column headerText="Nome">
+                    <h:outputText value="#{dados.nome}" />
+                </p:column>
+
+                <p:column headerText="Salário">
+                    <h:outputText value="#{dados.salario}" />
+                </p:column>
+
+                <p:column headerText="RG">
+                    <h:outputText value="#{dados.rg}" />
+                </p:column>
+                
+                <p:column headerText="CPF" >
+                    <h:outputText value="#{dados.cpf}" />
+                </p:column>
+                
+                <p:column headerText="Cargo">
+                    <h:outputText value="#{dados.cargo}" />
+                </p:column>
+                
+                <p:column headerText="Ações">
+                    <h:commandButton value="Editar" action="#{cadastroBeans.selecionar(dados)}"/>
+                    <h:commandButton value="Excluir" action="#{cadastroBeans.excluir(dados)}"/>
+                </p:column>
+                
+            </p:dataTable>
+        
+        </h:form>
+    </h:body>
+
+    
+</html>
+

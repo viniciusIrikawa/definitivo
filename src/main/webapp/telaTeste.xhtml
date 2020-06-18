@@ -19,44 +19,54 @@
     <h:body style="padding-top: 60px; background-color: darkcyan;">
         <b:navBar brand="WEB Clínica" fixed="top" >
             <b:navbarLinks>
-                <b:navLink value="Sobre nós"></b:navLink>
-                <b:navLink value="Contatos"></b:navLink>
-                <b:navLink value="Consultas"></b:navLink>
+                <b:navLink value="Folha de Pagamento" href="folhaPagamento.xhtml"></b:navLink>
+                <b:navLink value="Sobre nós" ></b:navLink>
+                <b:navLink value="Contato" ></b:navLink>
             </b:navbarLinks>
         </b:navBar>
+
+       <b:jumbotron >
         <b:container>
             <h:form styleClass="form-signin" prependId="false" >
                 <center>
-                    <h2 class="form-signin-heading" style="color: whitesmoke">Cadastro</h2>
+                    <h2 class="form-signin-heading" style="color: darkcyan">Cadastro</h2>
                 </center>
                 
-                <b:inputText id = "Username" placeholder="Usuário" value="#{cadastroBeans.cadastro.usuario}"> 
+                <b:inputText id = "Nome" placeholder="Nome" value="#{cadastroBeans.dados.nome}"> 
                     <f:facet name="prepend"> 
                         <b:iconAwesome name="user" />
                     </f:facet>
                 </b:inputText>
                 
-                <b:inputText id = "Email" placeholder="Email" value="#{cadastroBeans.cadastro.email}"> 
+                <b:inputText id = "Salario" placeholder="Salário" value="#{cadastroBeans.dados.salario}"> 
                     <f:facet name="prepend"> 
-                        <b:iconAwesome name="envelope" />
+                        <b:iconAwesome name="money" />
                     </f:facet>
                 </b:inputText>
                 
-                <b:inputText id = "Telefone" placeholder="Telefone" value="#{cadastroBeans.cadastro.telefone}"> 
-                    <f:facet name="prepend"> 
-                        <b:iconAwesome name="phone" />
-                    </f:facet>
+                <b:inputText id = "RG" placeholder="RG" value="#{cadastroBeans.dados.rg}"> 
+
                 </b:inputText>
                 
-                <b:inputText id="password" placeholder="Senha" type="password" value="#{cadastroBeans.cadastro.senha}"> 
-                    <f:facet name="prepend">
-                        <b:iconAwesome name="unlock-alt" />
-                    </f:facet>
+                <b:inputText id="CPF" placeholder="CPF"  value="#{cadastroBeans.dados.cpf}"> 
+
                 </b:inputText> 
+                
+                <b:inputText id = "Cargo" placeholder="Cargo" value="#{cadastroBeans.dados.cargo}"> 
+
+                </b:inputText>
+                
                 <b:selectBooleanCheckbox value="true" caption="Lembrar-me" />
-                <b:commandButton look="primary btn-block" value="Cadastrar" action="#{cadastroBeans.cadastrar()}"/> 
-            </h:form>
+                <b:commandButton look="primary btn-block" value="Cadastrar" action="#{cadastroBeans.cadastrar()}"/>
+            </h:form>   
         </b:container>
+       </b:jumbotron>
+        <center>
+        <footer>
+            <p>© Vinícius Irikawa - 2020</p>
+            
+        </footer>
+        </center>
     </h:body>
 </html>
 
