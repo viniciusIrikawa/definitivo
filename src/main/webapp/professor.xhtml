@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      dir="ltr">
+    
+    <h:head>
+    </h:head>
+    <h:body>
+        <ui:composition template="./WEB-INF/template/modelo.xhtml">
+            <ui:define name="principal">
+               <h:form styleClass="form-signin" prependId="false" >               
+                <center>
+                    <h2 class="form-signin-heading" style="color: darkcyan">Cadastrar Professores</h2>
+                </center>
+                <b:inputText id="nome" placeholder="Nome do Professor" required="true" value=""/>
+                
+                <b:inputText id="salario" placeholder="Salário" value=""/> 
+                
+                <b:inputText placeholder="RG" required="true"
+                             mask="999.999-99" value="">
+                </b:inputText>
+                
+                <b:inputText placeholder="CPF" required="true"
+                             mask="999.999.999-99" value="">
+                </b:inputText>
+               
+                <b:inputText id = "Cargo" placeholder="Cargo" value=""/> 
+                
+                <b:inputText id = "Disciplina" placeholder="Disciplina" value=""/> 
+                
+                <b:inputText id = "AI" placeholder="Área de Interesse" value=""/> 
+                
+                <h:selectOneMenu id="txt3"  required="true" label="Text 3" value="#{alunoBeans.alunos.sexo}">
+                    <f:selectItem itemLabel="Sexo" itemValue="" noSelectionOption="true" />
+                    <f:selectItem itemLabel="Masculino" itemValue="1" />
+                    <f:selectItem itemLabel="Feminino" itemValue="2" />
+                </h:selectOneMenu>
+                <br>
+                </br>
+                <center>
+                 <h2 class="form-signin-heading" style="color: darkcyan">Folha de Pagamento</h2>   
+                </center>
+            
+                <b:commandButton look="primary btn-block" value="Calcular" action="#{alunoBeans.calcular()}"/>    
+                <br></br>
+                <center>
+                    <b:commandButton  value="Cadastrar Dados" ajax="true" update="@none" look="success" style="width: 300px"
+                                      action="#{alunoBeans.salvar()}"/>
+                </center>
+            </h:form> 
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

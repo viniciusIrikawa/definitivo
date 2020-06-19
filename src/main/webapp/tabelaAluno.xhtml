@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+            <b:navBar brand="Escola WEB" fixed="top" >
+            <b:navbarLinks>
+                <b:navLink value="Cadastro de Alunos" href="aluno.xthml"/>
+                <b:navLink value="Folha de Pagamento" href="folhaPagamento.xhtml"></b:navLink>
+            </b:navbarLinks>
+            </b:navBar>
+        <h:form style="padding-top: 60px; background-color: darkcyan;">
+            <h:form id="form">
+            <h:panelGrid columns="9">
+                <b:inputText style="width: 70px" display="inline-block"
+                             placeholder="ID"
+                             value=""/>
+                
+                <b:inputText style="width: 80px"
+                             placeholder="CPF"
+                             value=""/>
+                
+                <b:inputText style="width: 80px"
+                             placeholder="Nome"
+                             value=""/>
+                
+                <b:inputText style="width: 80px"
+                             placeholder="RG"
+                             value=""/>
+                
+                <b:inputText style="width: 80px"
+                             placeholder="Data"
+                             value=""/>
+                
+                <b:inputText style="width: 70px"
+                             placeholder="Sexo"
+                             value="">
+
+                <b:inputText style="width: 80px"
+                             placeholder="Nota final"
+                             value="">    
+               
+                   <b:inputText style="width: 80px"
+                             placeholder="Status"
+                             value=""> 
+                
+               <b:inputText style="width: 80px"
+                             placeholder="Titulo"
+                             value="">       
+                
+                <b:inputText style="width: 80px"
+                            placeholder="Carga Horaria"
+                            value="">   
+  
+                   <f:facet name="append">
+                       <b:commandButton look="primary btn-block" value="Salvar" /> 
+                   </f:facet>         
+                    
+               </b:inputText>
+                <br>
+                </br>
+            </h:panelGrid> 
+            
+                <b:inputText placeholder="Pesquisar">
+                    <f:facet name="append">
+                        <b:commandButton value="Buscar" />
+                    </f:facet>                  
+                </b:inputText>
+         
+            <p:dataTable var="dados" value="">
+                <p:column headerText="Id">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="CPF">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="Nome">
+                    <h:outputText value="" />
+                </p:column>
+
+                <p:column headerText="RG">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Data de Nascimento" >
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Sexo">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Nota Final">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Status">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Titulo">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Carga Horária">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Valor">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Nota 1">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Nota 2">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Nota 3">
+                    <h:outputText value="" />
+                </p:column>
+                
+                <p:column headerText="Nota 4">
+                    <h:outputText value="" />
+                </p:column>
+                        
+                <p:column headerText="Ações">
+                    <h:commandButton value="Editar" />
+                    <h:commandButton value="Excluir" />
+                </p:column>
+                
+            </p:dataTable>
+        
+        </h:form>
+        </h:form>
+    </h:body>
+</html>
+

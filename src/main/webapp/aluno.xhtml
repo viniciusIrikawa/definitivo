@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p = "http://primefaces.org/ui"
+      xmlns:b = "http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      dir="ltr">
+    
+    <h:head>
+    </h:head>
+    <h:body>
+        <ui:composition template="./WEB-INF/template/modelo.xhtml"> 
+            <ui:define name="principal">
+                <h:form styleClass="form-signin" prependId="false" >               
+                <center>
+                    <h2 class="form-signin-heading" style="color: darkcyan">Dados do Aluno</h2>
+                </center>
+                <b:inputText placeholder="CPF" required="true"
+                             mask="999.999.999-99" value="#{alunoBeans.alunos.cpf}">
+                </b:inputText>
+                
+                <b:inputText id = "Nome" placeholder="Nome" value="#{alunoBeans.alunos.nome}"/> 
+                
+                <b:inputText placeholder="RG" required="true"
+                             mask="999.999-99" value="#{alunoBeans.alunos.rg}">
+                </b:inputText>
+                
+                <b:inputText placeholder="Data de Nascimento" required="true"
+                             mask="99/99/9999" value="#{alunoBeans.alunos.datanasc}">
+                </b:inputText>
+                <h:selectOneMenu id="txt3"  required="true" label="Text 3" value="#{alunoBeans.alunos.sexo}">
+                    <f:selectItem itemLabel="Sexo" itemValue="" noSelectionOption="true" />
+                    <f:selectItem itemLabel="Masculino" itemValue="1" />
+                    <f:selectItem itemLabel="Feminino" itemValue="2" />
+                </h:selectOneMenu>
+              
+                <br></br>
+                    
+                <center>
+                 <h2 class="form-signin-heading" style="color: darkcyan">Curso</h2>   
+                </center>
+                
+                <b:inputText id = "Titulo" placeholder="Título do Curso:" value="#{alunoBeans.alunos.titulo}"/> 
+                
+                <b:inputTextarea placeholder="Descrição"/>
+                <b:inputText id = "CH" placeholder="Carga Horária: " value="#{alunoBeans.alunos.cargahoraria}" /> 
+                <b:inputText id = "Valor" placeholder="Valor do Curso: " value="#{alunoBeans.alunos.valor}">
+                    <f:facet name="prepend">
+                        <b:iconAwesome name="money"/>
+                    </f:facet>
+                </b:inputText> 
+                
+                <center>
+                 <h2 class="form-signin-heading" style="color: darkcyan">Notas</h2>   
+                </center>
+                <h:outputText value="Nota 1: " style="color: darkcyan" />
+                <b:inputText  placeholder="Nota 1" value="#{alunoBeans.alunos.nota1}"/>
+                
+                 <h:outputText value="Nota 2: " style="color: darkcyan"/>
+                 <b:inputText  placeholder="Nota 2" value="#{alunoBeans.alunos.nota2}"/> 
+                 
+                  <h:outputText value="Nota 3: " style="color: darkcyan"/>
+                  <b:inputText  placeholder="Nota 3" value="#{alunoBeans.alunos.nota3}"/> 
+                 
+                  <h:outputText value="Nota 4: " style="color: darkcyan"/>
+                  <b:inputText  placeholder="Nota 4" value="#{alunoBeans.alunos.nota4}"/> 
+                  
+                  <h:outputText value="Média: " style="color: darkcyan"/>
+                  <b:inputText  placeholder="Média" value="#{alunoBeans.notafinal}"/>
+                  
+                  <h:outputText value="Status " style="color: darkcyan"/>
+                  <b:inputText  placeholder="Status" value="#{alunoBeans.status}"/>
+                     
+                <b:commandButton look="primary btn-block" value="Calcular" action="#{alunoBeans.calcular2()}"/>    
+                <br></br>
+                <center>
+                    <b:commandButton  value="Cadastrar Dados" ajax="true" update="@none" look="success" style="width: 300px"
+                                      action="#{alunoBeans.salvar()}"/>
+                </center>
+            </h:form>
+            </ui:define>
+        </ui:composition>
+
+    </h:body>
+</html>
+
